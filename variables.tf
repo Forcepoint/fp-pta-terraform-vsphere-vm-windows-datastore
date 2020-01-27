@@ -39,6 +39,7 @@ variable "memory" {
 }
 variable "time_zone" {
   type = number
+  default = null
   description = "The timezone to set in the OS. EX: 15"
 }
 variable "vlan_main" {
@@ -124,6 +125,11 @@ variable "domain_admin_password" {
   type = string
   default = null
   description = "The password of the domain administrator used to join this virtual machine to the domain. Required if you are setting join_domain."
+}
+variable "auto_logon" {
+  type = bool
+  default = true
+  description = "Specifies whether or not the VM automatically logs on as Administrator."
 }
 variable "run_once_command_list" {
   type = list(string)
