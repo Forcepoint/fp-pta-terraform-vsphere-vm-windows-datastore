@@ -89,7 +89,7 @@ variable "full_name" {
   type = string
   default = null
   description = "The full name of the user of this virtual machine. This populates the 'user' field in the general Windows system information. Default: Administrator."
-  // If you use this variable to something other than the default, ensure you set the win_full_name variable as well.
+  // If you use this variable to something other than the default, ensure you set the full_name variable as well.
   // https://github.com/terraform-providers/terraform-provider-vsphere/issues/118
 }
 variable "admin_password" {
@@ -131,7 +131,7 @@ variable "run_once_command_list" {
   type = list(string)
   default = ["net user Administrator /active:yes"]
   description = "A list of commands to run at first user logon, after guest customization. Each command is limited by the API to 260 characters."
-  // Be sure you use this variable with the right value if you change the win_full_name variable.
+  // Be sure you use this variable with the right value if you change the full_name variable.
   // https://github.com/terraform-providers/terraform-provider-vsphere/issues/118
 }
 variable "nested_hv_enabled" {
